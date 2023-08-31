@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="Nearby Restaurants">
+        <div class="slds-m-around_medium">
+            <template if:true={displayedRestaurants}>
+                <ul>
+                    <template for:each={displayedRestaurants} for:item="restaurant">
+                        <li key={restaurant.id}>
+                            <a href={restaurant.website} target="_blank">{restaurant.restaurantName}</a> - {restaurant.address}
+                        </li>
+                    </template>
+                </ul>
+            </template>
+            <lightning-map map-markers={mapMarkers} zoom-level="10"></lightning-map>
+        </div>
+    </lightning-card>
+</template>
